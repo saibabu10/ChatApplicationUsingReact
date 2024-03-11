@@ -4,7 +4,7 @@ import './App.css'
 import ChatComponent from './components/ChatComponent'
 
 function App() {
-  const [user, setUser] = useState('Tamil')
+  const [user, setUser] = useState('Sai')
 
   return (
     <div className="App">
