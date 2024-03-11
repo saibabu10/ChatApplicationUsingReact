@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
+import ChatComponent from './components/ChatComponent'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, setUser] = useState('Tamil')
 
   return (
     <div className="App">
-      Chat Application
+      <ChatComponent user={user}/>
     </div>
   )
 }
