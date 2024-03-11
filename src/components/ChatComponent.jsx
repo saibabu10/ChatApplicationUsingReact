@@ -8,7 +8,7 @@ function ChatComponent({user}) {
     }
   return (
     <div>
-        <div className='d-flex align-items-center justify-content-center p-4'>
+        <div className='d-flex align-items-center justify-content-center'>
             <h2 className='text-primary'>Chat Application</h2>
         </div>
         <div className='row mt-4'>
@@ -23,7 +23,6 @@ function ChatComponent({user}) {
                     <input type='text' className='form-control' value={text} onChange={(e)=>setText(e.target.value)}/>
                     <button className='btn btn-primary ms-3' onClick={handleSubmit}>Send</button>
                 </div>
-                <div id='copyright' className='m-3'>Copyright</div>
             </div>
         </div>
     </div>
