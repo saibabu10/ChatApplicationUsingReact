@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 
 function ChatComponent({user}) {
     const [messages,setMessages] = useState([]);
+    const[text,setText] = useState('')
+    function handleSubmit(){
+
+    }
   return (
     <div>
         <div className='d-flex align-items-center justify-content-center p-4'>
@@ -15,6 +19,11 @@ function ChatComponent({user}) {
                         <ChatMessageComponent {...message} user={user}/>
                     ))
                 }
+                <div className='d-flex mt-2'>
+                    <input type='text' className='form-control' value={text} onChange={(e)=>setText(e.target.value)}/>
+                    <button className='btn btn-primary ms-3' onClick={handleSubmit}>Send</button>
+                </div>
+                <div id='copyright' className='m-3'>Copyright</div>
             </div>
         </div>
     </div>
