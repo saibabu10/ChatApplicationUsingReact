@@ -1,8 +1,8 @@
 import React from 'react'
 
-function ChatMessageComponent() {
+function ChatMessageComponent({text}) {
   return (
-    <div>ChatMessageComponent</div>
+    <div>{text}</div>
   )
 }
 
