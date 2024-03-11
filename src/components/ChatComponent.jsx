@@ -1,10 +1,20 @@
 import React, { useState } from 'react'
-
+import {addDoc,collection} from 'firebase/firestore'
+import {db} from '../config/fire'
 function ChatComponent({user}) {
     const [messages,setMessages] = useState([]);
     const[text,setText] = useState('')
-    function handleSubmit(){
-
+    const messageRef = collection(db, "messages"); 
+    const handleSubmit=async()=>{
+        const date = new Date();
+        await addDoc(messageRef,{
+            text,
+            email:'shivasaibabu10@gmail.com',
+            logo:'',
+            date
+        })
+        setText("")
+        setTimeout(()=>document.querySelector('#selector').scrollIntoView({behavior:'smooth'}),0.5)
     }
   return (
     <div>
@@ -22,6 +32,7 @@ function ChatComponent({user}) {
                 <div className='d-flex mt-2'>
                     <input type='text' className='form-control' value={text} onChange={(e)=>setText(e.target.value)}/>
                     <button className='btn btn-primary ms-3' onClick={handleSubmit}>Send</button>
+                    {/* <div id="selector"></div> */}
                 </div>
             </div>
         </div>
