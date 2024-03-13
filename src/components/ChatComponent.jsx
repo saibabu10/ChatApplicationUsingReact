@@ -11,7 +11,8 @@ function ChatComponent({user}) {
         await addDoc(messageRef,{
             text,
             email:'shivasaibabu10@gmail.com',
-            logo:'',
+            logo:user.photoUrl,
+            name:user.displayName,
             date
         })
         setText("")
