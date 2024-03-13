@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import ChatComponent from './components/ChatComponent'
 import { signInWithPopup } from 'firebase/auth'
+import { auth,provider} from './config/fire'
 
 function App() {
   const [user, setUser] = useState(null)
