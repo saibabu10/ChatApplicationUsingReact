@@ -31,3 +31,12 @@
   width: 50px;
   border-radius: 10px;
 }
+.message-name{
+  font-size:13px;
+  padding: 0.5em 1em !important;
+  margin: 1em;
+}
+.right-content{
+  flex-direction: column;
+  align-items:end;
+}

@@ -18,7 +18,7 @@ function ChatComponent({user}) {
         const date = new Date();
         await addDoc(messageRef,{
             text,
-            email:'shivasaibabu10@gmail.com',
+            email:user.email,
             logo:user.photoUrl,
             name:user.displayName,
             date
