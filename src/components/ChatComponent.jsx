@@ -5,7 +5,15 @@ import ChatMessageComponent from './ChatMessageComponent';
 function ChatComponent({user}) {
     const [messages,setMessages] = useState([]);
     const[text,setText] = useState('')
+    const submitButtonRef = React.useRef()
     const messageRef = collection(db, "messages"); 
+    const handleKeypress=(event)=>{
+        if(event.key==='Enter')
+        {
+            event.preventDefault();
+            submitButtonRef.current.click();
+        }
+    }
     const handleSubmit=async()=>{
         const date = new Date();
         await addDoc(messageRef,{
@@ -39,8 +47,8 @@ function ChatComponent({user}) {
                     ))
                 }
                 <div className='d-flex mt-2'>
-                    <input type='text' className='form-control' value={text} onChange={(e)=>setText(e.target.value)}/>
-                    <button className='btn btn-primary ms-3' onClick={handleSubmit}>Send</button>
+                    <input type='text' className='form-control' value={text} onChange={(e)=>setText(e.target.value)} onKeyPress={handleKeypress}/>
+                    <button className='btn btn-primary ms-3' onClick={handleSubmit} ref={submitButtonRef}>Send</button>
                     <div id="selector"></div>
                 </div>
             </div>
